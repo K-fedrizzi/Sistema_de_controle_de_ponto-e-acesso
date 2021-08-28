@@ -1,6 +1,10 @@
 package com.dio.live.model;
 
 import lombok.*;
+import org.hibernate.envers.Audited;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 // anotações das dependencias do lombok
 @Getter
@@ -9,7 +13,10 @@ import lombok.*;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Builder
+@Entity
+@Audited
 public class CategoriaUsuario {
+    @Id
     private long id;
     private String descricao;
 }

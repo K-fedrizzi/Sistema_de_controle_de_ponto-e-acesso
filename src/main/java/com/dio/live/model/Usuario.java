@@ -1,7 +1,10 @@
 package com.dio.live.model;
 
 import lombok.*;
+import org.hibernate.envers.Audited;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -13,8 +16,11 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Builder
+@Entity
+@Audited
 
 public class Usuario {
+    @Id
     private Long id;
     @ManyToOne      // relação de 1 para n
     private CategoriaUsuario categoriaUsuario;
